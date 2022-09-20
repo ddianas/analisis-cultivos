@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head lang="en">
+
+    </head>
+    <body>
+
+        <div class="container">
+            <div th:fragment="header">
+
+                <nav class="navbar navbar-expand-lg bg-light">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="#">Navbar scroll</a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarScroll">
+                            <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="/controlcultivos">Home</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        General
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" th:href="@{/usuarios}" href="#">Usuarios</a></li>
+                                        <li><a class="dropdown-item" th:href="@{/roles}" href="#">Roles</a></li>
+                                    </ul>
+                                </li>
+
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Geo
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" th:href="@{/localidades}" href="#">Localidades</a></li>
+                                        <li><a class="dropdown-item" th:href="@{/provincias}" href="#">Provincias</a></li>
+                                    </ul>
+                                </li>
+
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Analisis
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" th:href="@{/muestras}" href="#">Muestras</a></li>
+                                        <li><a class="dropdown-item" th:href="@{/tipodemuestras}" href="#">Tipo de muestras</a></li>
+                                        <li><hr class="dropdown-divider"></li>
+                                        <li><a class="dropdown-item" th:href="@{/registros}" href="#">Registros</a></li>
+                                        <li><a class="dropdown-item" th:href="@{/tramos}" href="#">Tramos</a></li>
+                                        <li><hr class="dropdown-divider"></li>
+                                        <li><a class="dropdown-item" th:href="@{/personal}" href="#">Personal</a></li>
+                                        <li><a class="dropdown-item" th:href="@{/profesionales}" href="#">Profesionales</a></li>
+                                    </ul>
+                                </li>
+
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Otros
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" th:href="@{/categorias}" href="#">Categorias</a></li>
+                                        <li><hr class="dropdown-divider"></li>
+                                        <li><a class="dropdown-item" th:href="@{/especialidades}" href="#">Especialidades</a></li>
+                                    </ul>
+                                </li>
+
+
+                            </ul>
+                            <ul class="nav navbar-nav navbar-right">
+                                <form th:action="@{/logout}" method="post">
+                                    <li>Bienvenido
+                                        <font size="1">
+                                            [[${#httpServletRequest.remoteUser}]]
+                                        </font>
+                                        <input type="submit" class="btn btn-link" value="Salir"/>
+                                    </li>
+                                </form>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+
+    </body>
+</html>
