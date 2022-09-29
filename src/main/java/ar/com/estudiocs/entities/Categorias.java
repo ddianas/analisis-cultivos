@@ -11,9 +11,6 @@ public class Categorias implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name="descripcion")
-    private String descripcion;
-
     public Integer getId() {
         return id;
     }
@@ -30,4 +27,6 @@ public class Categorias implements Serializable {
         this.descripcion = descripcion;
     }
 
+    @Column(name="descripcion")
+    private String descripcion;
 }

@@ -11,11 +11,6 @@ public class Provincias implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-
-    @Column(name="descripcion")
-    private String descripcion;
-
-
     public Integer getId() {
         return id;
     }
@@ -32,6 +27,18 @@ public class Provincias implements Serializable {
         this.descripcion = descripcion;
     }
 
+    @Column(name="descripcion")
+    private String descripcion;
 
+    @JoinColumn(name = "fk_localidades", referencedColumnName = "id",nullable=false)
+    @ManyToOne
+    private Localidades localidad;
 
+    public Localidades getLocalidad() {
+        return localidad;
+    }
+
+    public void setLocalidad(Localidades localidad) {
+        this.localidad = localidad;
+    }
 }

@@ -3,7 +3,6 @@ package ar.com.estudiocs.entities;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
-import java.util.List;
 
 @Entity
 @Table(name="analisis")
@@ -25,13 +24,11 @@ public class RegistrosAnalisis implements Serializable {
     @Column(name="observacion")
     private String observacion;
 
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name = "fk_tramos")
-    private List<Tramos> tramo;
+    @Column(name="tramo")
+    private Tramos tramo;
 
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name = "fk_profesional")
-    private List<Profesionales> profesionales;
+    @Column(name="profesionales")
+    private Profesionales profesionales;
 
     public Integer getId() {
         return id;
@@ -73,19 +70,19 @@ public class RegistrosAnalisis implements Serializable {
         this.observacion = observacion;
     }
 
-    public List<Tramos> getTramo() {
+    public Tramos getTramo() {
         return tramo;
     }
 
-    public void setTramo(List<Tramos> tramo) {
+    public void setTramo(Tramos tramo) {
         this.tramo = tramo;
     }
 
-    public List<Profesionales> getProfesionales() {
+    public Profesionales getProfesionales() {
         return profesionales;
     }
 
-    public void setProfesionales(List<Profesionales> profesionales) {
+    public void setProfesionales(Profesionales profesionales) {
         this.profesionales = profesionales;
     }
 }

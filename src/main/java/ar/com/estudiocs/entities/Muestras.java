@@ -18,30 +18,6 @@ public class Muestras implements Serializable {
     @Column(name="f_ingreso")
     private Date fechaIngreso;
 
-    @Column(name="f_cierre")
-    private Date fechaCierre;
-
-    @Column(name="con_ingreso")
-    private String conceptoIngreso;
-
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name="fk_tipomuestra",referencedColumnName = "id")
-    private TipoDeMuestras tipoMuestra;
-
-    @ManyToOne(optional = false, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinColumn(name= "fk_persona", referencedColumnName = "id",nullable=false)
-    private Personal persona;
-
-    @Column(name="estado")
-    private boolean estado;
-
-    @Column(name="observacion")
-    private String observacion;
-
-    @ManyToOne(optional = false, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinColumn(name= "fk_profesional", referencedColumnName = "id",nullable=false)
-    private Profesionales profesionales;
-
     public Integer getId() {
         return id;
     }
@@ -121,5 +97,26 @@ public class Muestras implements Serializable {
     public void setprofesionales( Profesionales profesionales) {
         this.profesionales = profesionales;
     }
+
+    @Column(name="f_cierre")
+    private Date fechaCierre;
+
+    @Column(name="con_ingreso")
+    private String conceptoIngreso;
+
+    @Column(name="tipo_mu")
+    private TipoDeMuestras tipoMuestra;
+
+    @Column(name="persona")
+    private Personal persona;
+
+    @Column(name="estado")
+    private boolean estado;
+
+    @Column(name="observacion")
+    private String observacion;
+
+    @Column(name="profesional")
+    private Profesionales profesionales;
 
 }

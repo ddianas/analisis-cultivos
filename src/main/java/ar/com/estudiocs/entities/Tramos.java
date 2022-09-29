@@ -10,11 +10,6 @@ public class Tramos implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-
-    @Column(name="descripcion")
-    private String descripcion;
-
-
     public Integer getId() {
         return id;
     }
@@ -30,4 +25,7 @@ public class Tramos implements Serializable {
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
+
+    @Column(name="descripcion")
+    private String descripcion;
 }

@@ -11,8 +11,8 @@ import java.util.List;
 
 @Repository
 public interface IEspecialidadesDao extends JpaRepository<Especialidades, Integer> {
-    @Query("select c from Especialidades c where c.especialidad like ?1")
-    public List<Especialidades> findByEspecialidad(String especialidad);
+    @Query("select c from Especialidades c where c.descripcion like ?1")
+    public List<Especialidades> findByDescripcion(String descripcion);
 
     Page<Especialidades> findAll(Pageable pageable);
 }

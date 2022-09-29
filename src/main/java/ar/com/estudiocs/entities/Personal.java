@@ -14,26 +14,6 @@ public class Personal implements Serializable {
     @Column(name="nombre")
     private String nombre;
 
-    @Column(name="apellido")
-    private String apellido;
-
-    @Column(name="direccion")
-    private String direccion;
-
-    @Column(name="email")
-    private String email;
-
-    @Column(name="telefono")
-    private Integer telefono;
-
-    @Column(name="observacion")
-    private String observacion;
-
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "fk_localidad", referencedColumnName = "id")
-    private Localidades localidad;
-
-
     public Integer getId() {
         return id;
     }
@@ -97,5 +77,23 @@ public class Personal implements Serializable {
     public void setLocalidad(Localidades localidad) {
         this.localidad = localidad;
     }
+
+    @Column(name="apellido")
+    private String apellido;
+
+    @Column(name="direccion")
+    private String direccion;
+
+    @Column(name="email")
+    private String email;
+
+    @Column(name="telefono")
+    private Integer telefono;
+
+    @Column(name="observacion")
+    private String observacion;
+
+    @Column(name="localidad")
+    private Localidades localidad;
 
 }

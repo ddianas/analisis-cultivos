@@ -17,8 +17,7 @@ public class TipoDeMuestras implements Serializable {
     @Column(name="nombre_cientifico")
     private String nombreCientifico;
 
-    @OneToOne (cascade = CascadeType.ALL)
-    @JoinColumn(name = "fk_categoria", referencedColumnName = "id")
+    @Column(name="categoria")
     private Categorias categoria;
 
     @Column(name="observacion")

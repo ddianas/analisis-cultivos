@@ -12,9 +12,6 @@ public class Especialidades implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name="especialidad")
-    private String especialidad;
-
     public Integer getId() {
         return id;
     }
@@ -23,11 +20,14 @@ public class Especialidades implements Serializable {
         this.id = id;
     }
 
-    public String getEspecialidad() {
-        return especialidad;
+    public String getDescripcion() {
+        return descripcion;
     }
 
-    public void setEspecialidad(String especialidad) {
-        this.especialidad = especialidad;
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
+
+    @Column(name="descripcion")
+    private String descripcion;
 }

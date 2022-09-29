@@ -29,10 +29,10 @@
 
                 </div>
                 <div class="col-sm-1">                    
-                    <a class="btn btn-info" th:href="${'/controlcultivos/roles/refresh/'}">Refrescar</a>
+                    <a class="btn btn-info" th:href="${'/estudiocs/roles/refresh/'}">Refrescar</a>
                 </div>
                 <div class="col-sm-1">
-                    <a class="btn btn-default" th:href="${'/controlcultivos/roles/create/0'}">Nuevo</a>
+                    <a class="btn btn-default" th:href="${'/estudiocs/roles/create/0'}">Nuevo</a>
                 </div>
                 <div class="col-sm-11">
                     <h5 style="color:red;" th:text="${message}"></h5>
@@ -56,7 +56,7 @@
                         <td th:text="${entity.id}"></td>
                         <td width="70%" th:text="${entity.descrip}"></td>
                         <td th:text="${entity.nivel}"></td>
-                        <td width="5%"><a class="btn btn-warning" th:href="${'/controlcultivos/roles/edit/' + entity.id}">Editar</a></td>
+                        <td width="5%"><a class="btn btn-warning" th:href="${'/estudiocs/roles/edit/' + entity.id}">Editar</a></td>
                         <td width="5%"><a class="btn btn-danger" th:onclick="'javascript:jsdelete('+ *{entity.id} +')'">Borrar</a></td>
                     </tr>                    
                 </table>                

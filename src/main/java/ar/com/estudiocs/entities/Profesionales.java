@@ -25,23 +25,6 @@ public class Profesionales implements Serializable {
     @Column(name="observacion")
     private String observacion;
 
-
-    @ManyToOne(optional = false, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinColumn(name= "fk_especialidad", referencedColumnName = "id",nullable=false)
-    private Especialidades especialidad;
-
-    @OneToOne (cascade = CascadeType.ALL)
-    @JoinColumn(name = "fk_usuario", referencedColumnName = "id")
-    private Usuarios usuario;
-
-    public Usuarios getUsuario() {
-        return usuario;
-    }
-
-    public void setUsuario(Usuarios usuario) {
-        this.usuario = usuario;
-    }
-
     public Integer getId() {
         return id;
     }
@@ -97,4 +80,12 @@ public class Profesionales implements Serializable {
     public void setEspecialidad(Especialidades especialidad) {
         this.especialidad = especialidad;
     }
+
+
+
+    @Column(name="especialidad")
+
+    private Especialidades especialidad;
+
+
 }

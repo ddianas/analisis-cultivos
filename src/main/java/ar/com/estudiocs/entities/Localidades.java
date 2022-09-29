@@ -22,8 +22,8 @@ public class Localidades implements Serializable {
     @Column(name="altura")
     private String altura;
 
-    @ManyToOne(optional = false, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinColumn(name= "fk_provincia", referencedColumnName = "id",nullable=false)
+    @Column(name="provincia")
+
     private Provincias provincia;
 
     @Column(name="localidad")
